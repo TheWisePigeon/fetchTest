@@ -1,15 +1,25 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import React from 'react'
 import './App.css'
+import Avatar from './components/Avatar'
+import avatars from './avatar'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  function createAvatars(avatar) {
+    return(
+      <Avatar src={avatar.src} name={avatar.name}/>
+    )
+  }
 
   return (
     <div className="App">
-      
-      <h1>BRUH</h1>
+      {
+        avatars.map(
+          x=> createAvatars(x)
+        )
+      }
     </div>
+      
   )
 }
 
